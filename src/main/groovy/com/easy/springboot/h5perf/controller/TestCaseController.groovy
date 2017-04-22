@@ -3,6 +3,7 @@ package com.easy.springboot.h5perf.controller
 import com.easy.springboot.h5perf.model.TestCase
 import com.easy.springboot.h5perf.result.Result
 import com.easy.springboot.h5perf.service.TestCaseService
+import com.github.pagehelper.PageInfo
 import groovy.json.JsonOutput
 import io.swagger.annotations.Api
 import io.swagger.annotations.ApiImplicitParam
@@ -51,14 +52,14 @@ class TestCaseController {
     def listTestCase(Model model,
                      @RequestParam(value = "pageNo", required = false) Integer pageNo,
                      @RequestParam(value = "pageSize", required = false) Integer pageSize) {
-        model.addAttribute("testCaseList", testCaseService.findAll(pageNo, pageSize).list)
-
-        model.addAttribute("pageNo", pageNo)
-        model.addAttribute("totalPage", testCaseService.findAll(pageNo, pageSize).pages)
-        model.addAttribute("prePage", testCaseService.findAll(pageNo, pageSize).prePage)
-        model.addAttribute("nextPage", testCaseService.findAll(pageNo, pageSize).nextPage)
-        model.addAttribute("hasPreviousPage", testCaseService.findAll(pageNo, pageSize).hasPreviousPage)
-        model.addAttribute("hasNextPage", testCaseService.findAll(pageNo, pageSize).hasNextPage)
+        def pageInfo = testCaseService.findAll(pageNo, pageSize)
+        model.addAttribute("testCaseList", pageInfo.list)
+        model.addAttribute("pageNo", pageInfo.pageNum)
+        model.addAttribute("totalPage", pageInfo.pages)
+        model.addAttribute("prePage", pageInfo.prePage)
+        model.addAttribute("nextPage", pageInfo.nextPage)
+        model.addAttribute("hasPreviousPage", pageInfo.hasPreviousPage)
+        model.addAttribute("hasNextPage", pageInfo.hasNextPage)
 
         "/test_case/list"
     }
