@@ -1,8 +1,8 @@
 package com.easy.springboot.h5perf.controller
 
-import com.easy.springboot.h5perf.mapper.TestCaseMapper
 import com.easy.springboot.h5perf.model.TestCase
 import com.easy.springboot.h5perf.result.Result
+import com.easy.springboot.h5perf.service.TestCaseService
 import groovy.json.JsonOutput
 import io.swagger.annotations.Api
 import io.swagger.annotations.ApiImplicitParam
@@ -25,14 +25,14 @@ import org.springframework.web.bind.annotation.ResponseBody
 @Controller
 class TestCaseController {
     @Autowired
-    TestCaseMapper testCaseMapper
+    TestCaseService testCaseService
 
     @PostMapping("/saveTestCase")
     @ResponseBody
     def saveTestCase(TestCase testCase) {
         testCase.gmtCreated = new Date()
         println("testCase===" + testCase)
-        int insert = testCaseMapper.insert(testCase)
+        int insert = testCaseService.save(testCase)
         println("testCase===" + testCase)
         Result result = new Result()
         if (insert == 1) {
@@ -48,8 +48,18 @@ class TestCaseController {
     }
 
     @GetMapping("/listTestCase")
-    def listTestCase(Model model) {
-        model.addAttribute("testCaseList", testCaseMapper.findAll())
+    def listTestCase(Model model,
+                     @RequestParam(value = "pageNo", required = false) Integer pageNo,
+                     @RequestParam(value = "pageSize", required = false) Integer pageSize) {
+        model.addAttribute("testCaseList", testCaseService.findAll(pageNo, pageSize).list)
+
+        model.addAttribute("pageNo", pageNo)
+        model.addAttribute("totalPage", testCaseService.findAll(pageNo, pageSize).pages)
+        model.addAttribute("prePage", testCaseService.findAll(pageNo, pageSize).prePage)
+        model.addAttribute("nextPage", testCaseService.findAll(pageNo, pageSize).nextPage)
+        model.addAttribute("hasPreviousPage", testCaseService.findAll(pageNo, pageSize).hasPreviousPage)
+        model.addAttribute("hasNextPage", testCaseService.findAll(pageNo, pageSize).hasNextPage)
+
         "/test_case/list"
     }
 
@@ -57,8 +67,9 @@ class TestCaseController {
     @ApiOperation(value = "list all TestCase Json", notes = "listTestCaseJson", produces = "application/json")
     @GetMapping("/listTestCaseJson")
     @ResponseBody
-    def listTestCaseJson() {
-        testCaseMapper.findAll()
+    def listTestCaseJson(@RequestParam(value = "pageNo", required = false) Integer pageNo,
+                         @RequestParam(value = "pageSize", required = false) Integer pageSize) {
+        testCaseService.findAll(pageNo, pageSize)
     }
 
     @ApiOperation(value = "findOne TestCase Json", notes = "findOne TestCase", produces = "application/json")
@@ -72,7 +83,23 @@ class TestCaseController {
     @GetMapping("/findOne")
     @ResponseBody
     def findOne(@RequestParam(value = "id", required = true) Integer id) {
-        testCaseMapper.findOne(id)
+        testCaseService.findOne(id)
+    }
+
+    @ApiOperation(value = "findByNetType TestCase Json", notes = "findByNetType TestCase", produces = "application/json")
+//  在方法上使用@ApiImplicitParam可以增加对参数等的描述
+    @ApiImplicitParam(name = "netType",
+            value = "findByNetType",
+            dataType = "String",//This can be the class name or a primitive
+            required = true,
+            paramType = "query")
+    @GetMapping("/findByNetType")
+    @ResponseBody
+    def findByNetType(@RequestParam(value = "netType", required = false) String netType,
+                      @RequestParam(value = "pageNo", required = false) Integer pageNo,
+                      @RequestParam(value = "pageSize", required = false) Integer pageSize
+    ) {
+        testCaseService.queryByPage(netType, pageNo, pageSize)
     }
 
 

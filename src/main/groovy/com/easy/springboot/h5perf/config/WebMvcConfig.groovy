@@ -13,6 +13,10 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 class WebMvcConfig extends WebMvcConfigurerAdapter {
     @Override
     void addResourceHandlers(ResourceHandlerRegistry registry) {
+        registry.addResourceHandler("/static/**")
+                .addResourceLocations("classpath:/static/")
+
+
         registry.addResourceHandler("swagger-ui.html")
                 .addResourceLocations("classpath:/META-INF/resources/")
 

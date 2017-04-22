@@ -12,6 +12,11 @@ html {
 body {
     margin: 0;
 }
+
+.center{
+    text-align:center;
+}
+
 article,
 aside,
 details,

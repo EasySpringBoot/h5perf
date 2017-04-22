@@ -27,6 +27,23 @@ mybatis:
         default-statement-timeout: 30
 
 
+
+pagehelper:
+    helperDialect: mysql
+    reasonable: true
+    supportMethodsArguments: true
+    params: count=countSql
+
+
+mapper:
+    mappers:
+        - com.easy.springboot.h5perf.mapper.TestCaseMapper
+        - com.easy.springboot.h5perf.mapper.TestResourceMapper
+        - com.easy.springboot.h5perf.mapper.TestTimeDataMapper
+    not-empty: false
+    identity: MYSQL
+
+
 logging:
     level:
       root: WARN

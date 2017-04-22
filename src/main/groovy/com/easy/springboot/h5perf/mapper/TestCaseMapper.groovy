@@ -24,6 +24,9 @@ interface TestCaseMapper {
     @Select("select * from test_case")
     List<TestCase> findAll()
 
+    @Select("select * from test_case where net_type=#{netType}")
+    List<TestCase> findByNetType(@Param(value="netType")String netType)
+
     @Select("select * from test_case where id=#{id} limit 1")
     TestCase findOne(@Param(value="id")Integer id)
 
