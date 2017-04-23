@@ -27,7 +27,7 @@ dependencies {
     compile('org.mybatis.generator:mybatis-generator-core:1.3.5')
 
 //    mappers
-    compile('tk.mybatis:mapper-spring-boot-starter:1.1.0')
+//    compile('tk.mybatis:mapper-spring-boot-starter:1.1.0')
 //   pagehelper
     compile('com.github.pagehelper:pagehelper-spring-boot-starter:1.1.0')
 
