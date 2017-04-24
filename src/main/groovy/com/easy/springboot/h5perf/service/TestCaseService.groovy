@@ -9,10 +9,10 @@ import com.github.pagehelper.PageInfo
 interface TestCaseService {
     def save(TestCase testCase)
 
-    def PageInfo<TestCase> findAll(Integer pageNo, Integer pageSize)
+    PageInfo<TestCase> findAll(Integer pageNo, Integer pageSize)
 
-    def TestCase findOne(Integer id)
+    TestCase findOne(Integer id)
 
-    def PageInfo<TestCase> queryByPage(String netType, Integer pageNo, Integer pageSize)
+    PageInfo<TestCase> queryByPage(String netType, Integer pageNo, Integer pageSize)
 
 }
