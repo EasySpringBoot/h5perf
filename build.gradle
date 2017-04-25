@@ -35,6 +35,10 @@ dependencies {
 
     compile('com.alibaba:druid:1.0.29')
 
+    compile('org.springframework.boot:spring-boot-starter-security')
+//    compile('org.springframework.security.oauth:spring-security-oauth2')
+
+
     // https://mvnrepository.com/artifact/io.springfox/springfox-swagger2
     compile group: 'io.springfox', name: 'springfox-swagger2', version: '2.6.1'
 // https://mvnrepository.com/artifact/io.springfox/springfox-swagger-ui

@@ -1,6 +1,7 @@
 package com.easy.springboot.h5perf.config
 
 import org.springframework.context.annotation.Configuration
+import org.springframework.web.servlet.config.annotation.EnableWebMvc
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 
@@ -11,6 +12,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
  */
 
 @Configuration
+@EnableWebMvc
 class WebMvcConfig extends WebMvcConfigurerAdapter {
     @Override
     void addResourceHandlers(ResourceHandlerRegistry registry) {
