@@ -20,19 +20,19 @@ class RequestResourceController {
     @ResponseBody
     def postRequestResource(
             @RequestParam(value = "tid") String tid,
+            @RequestParam(value = "index") Integer index,
             @RequestParam(value = "testUrl") String testUrl,
-            @RequestParam(value = "countInterceptRequest") String countInterceptRequest,
-            @RequestParam(value = "startTime") String startTime,
-            @RequestParam(value = "timestamp") String timestamp,
-            @RequestParam(value = "timeCost") String timeCost,
+            @RequestParam(value = "startTime") Long startTime,
+            @RequestParam(value = "timestamp") Long timestamp,
+            @RequestParam(value = "timeCost") Integer timeCost,
             @RequestParam(value = "requestUrl") String requestUrl,
             @RequestParam(value = "method") String method,
             @RequestParam(value = "headers") String headers
     ) {
         def requestResource = new RequestResource()
         requestResource.tid = tid
+        requestResource.index = index
         requestResource.testUrl = testUrl
-        requestResource.countInterceptRequest = countInterceptRequest
         requestResource.startTimestamp = startTime
         requestResource.timestamp = timestamp
         requestResource.timeCost = timeCost
