@@ -31,15 +31,15 @@
 
     <div class="center">
         <ul class="pagination">
-            <li><a href="/listTestCase?pageNo=${prePage}&pageSize=10">&laquo;</a></li>
+            <li><a href="/listTestResult?pageNo=${prePage}&pageSize=10">&laquo;</a></li>
         <#list 1..totalPage as index>
             <#if index=pageNo>
-                <li class="active"><a href="/listTestCase?pageNo=${index}&pageSize=10">${index}</a></li>
+                <li class="active"><a href="/listTestResult?pageNo=${index}&pageSize=10">${index}</a></li>
             <#else>
-                <li><a href="/listTestCase?pageNo=${index}&pageSize=10">${index}</a></li>
+                <li><a href="/listTestResult?pageNo=${index}&pageSize=10">${index}</a></li>
             </#if>
         </#list>
-            <li><a href="/listTestCase?pageNo=${nextPage}&pageSize=10">&raquo;</a></li>
+            <li><a href="/listTestResult?pageNo=${nextPage}&pageSize=10">&raquo;</a></li>
 
         <#--<li class="active"><a href="#">1</a></li>-->
         <#--<li><a href="#">2</a></li>-->
