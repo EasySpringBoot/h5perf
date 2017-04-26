@@ -35,7 +35,7 @@ dependencies {
 
     compile('com.alibaba:druid:1.0.29')
 
-    compile('org.springframework.boot:spring-boot-starter-security')
+//    compile('org.springframework.boot:spring-boot-starter-security')
 //    compile('org.springframework.security.oauth:spring-security-oauth2')
 
 

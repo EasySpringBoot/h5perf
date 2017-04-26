@@ -1,6 +1,5 @@
 package com.easy.springboot.h5perf.controller
 
-import org.springframework.security.access.prepost.PreAuthorize
 import org.springframework.stereotype.Controller
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.servlet.ModelAndView
@@ -23,7 +22,7 @@ class IndexController {
      * @return
      */
     @RequestMapping(value = ["", "/", "/index"])
-    @PreAuthorize("hasAnyRole('USER')")
+//    @PreAuthorize("hasAnyRole('USER')")
     def index() {
         new ModelAndView("/indexPage")
     }

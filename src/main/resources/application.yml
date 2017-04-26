@@ -8,13 +8,13 @@ spring:
         type: com.alibaba.druid.pool.DruidDataSource
         driver-class-name: com.mysql.cj.jdbc.Driver
 
-    mvc:
-    # 所有的访问都匹配映射到静态资源路径,spring.mvc.static-path-pattern 只可以定义一个，目前不支持多个逗号分割的方式
-        static-path-pattern: /**
-
-    resources:
-    # 这里的配置是覆盖默认配置，所以需要将默认的也加上否则static、public等这些路径将不能被当作静态资源路径
-        static-locations: classpath:/static/,classpath:/public/,classpath:/resources/,classpath:/META-INF/resources/,classpath:/META-INF/resources/webjars/
+#    mvc:
+#    # 所有的访问都匹配映射到静态资源路径,spring.mvc.static-path-pattern 只可以定义一个，目前不支持多个逗号分割的方式
+#        static-path-pattern: /**
+#
+#    resources:
+#    # 这里的配置是覆盖默认配置，所以需要将默认的也加上否则static、public等这些路径将不能被当作静态资源路径
+#        static-locations: classpath:/static/,classpath:/public/,classpath:/resources/,classpath:/META-INF/resources/,classpath:/META-INF/resources/webjars/
 
     # 在freemarker获取request对象
     freemarker:
