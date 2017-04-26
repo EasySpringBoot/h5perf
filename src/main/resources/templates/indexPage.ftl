@@ -50,8 +50,8 @@
                                         <label><input type="radio" name="containerType" value="ORGIN" checked=""
                                                       data-parsley-multiple="containerType"><span></span>原生H5容器</label>
                                         <label style="margin-left: 20PX;"><input type="radio" name="containerType"
-                                                                                 value="WECHAT"
-                                                                                 data-parsley-multiple="containerType"><span></span>微信H5容器</label>
+                                                                                 value="DING"
+                                                                                 data-parsley-multiple="containerType"><span></span>钉钉H5容器</label>
                                     </div>
                                 </div>
                             </div>

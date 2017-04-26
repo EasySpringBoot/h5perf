@@ -38,8 +38,7 @@ dependencies {
 //    compile('org.springframework.boot:spring-boot-starter-security')
 //    compile('org.springframework.security.oauth:spring-security-oauth2')
 
-
-    // https://mvnrepository.com/artifact/io.springfox/springfox-swagger2
+// https://mvnrepository.com/artifact/io.springfox/springfox-swagger2
     compile group: 'io.springfox', name: 'springfox-swagger2', version: '2.6.1'
 // https://mvnrepository.com/artifact/io.springfox/springfox-swagger-ui
     compile group: 'io.springfox', name: 'springfox-swagger-ui', version: '2.6.1'
@@ -47,11 +46,13 @@ dependencies {
     //Group: org.webjars.bower
     // https://mvnrepository.com/artifact/org.webjars/webjars-locator
     compile group: 'org.webjars', name: 'webjars-locator', version: '0.32'
+    // 前端的框架要注意引用org.webjars.bower同一个group里面的，防止版本冲突
     // https://mvnrepository.com/artifact/org.webjars.bower/jquery
     compile group: 'org.webjars.bower', name: 'jquery', version: '3.2.1'
     // https://mvnrepository.com/artifact/org.webjars.bower/bootstrap
     compile group: 'org.webjars.bower', name: 'bootstrap', version: '4.0.0-alpha.6'
-
+    // https://mvnrepository.com/artifact/org.webjars.bower/datatables
+    compile group: 'org.webjars.bower', name: 'datatables', version: '1.10.15'
 
 }
 

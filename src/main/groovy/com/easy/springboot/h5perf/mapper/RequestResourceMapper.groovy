@@ -30,4 +30,8 @@ interface RequestResourceMapper {
     List<RequestResource> findByTid(@Param(value = "tid") String tid)
 
 
+    @Select("SELECT * FROM request_resource group by tid order by id desc")
+    List<RequestResource> listTestResult()
+
+
 }

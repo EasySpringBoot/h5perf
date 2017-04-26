@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+<nav class="navbar navbar-inverse navbar-static-top" role="navigation">
     <div class="container-fluid">
 
         <div class="navbar-header">
@@ -8,6 +8,7 @@
         <div>
             <ul class="nav navbar-nav">
                 <li class="active"><a href="/listTestCase">测试列表</a></li>
+                <li class="active"><a href="/listTestResult">结果列表</a></li>
 
                 <li><a href="/swagger-ui.html" target="_blank">API文档</a></li>
 

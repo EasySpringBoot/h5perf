@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.ResponseBody
 //在Controller上使用@Api会生成这个Controller的整体描述
 @Api(value = "执行测试用例", tags = ["执行测试用例API"], description = "RunTestCaseController")
 @Controller
-class RunTestCaseController {
+class RunController {
     @Autowired
     RunTestCaseService runTestCaseService
 
@@ -32,11 +32,6 @@ class RunTestCaseController {
         runTestCaseService.run(url)
     }
 
-    @GetMapping("/runResult")
-    @ResponseBody
-    def runResult(@RequestParam(value="tid") String tid){
 
-
-    }
 
 }

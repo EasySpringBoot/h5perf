@@ -5,9 +5,9 @@ package com.easy.springboot.h5perf.model
  */
 class TestTimeData {
     Integer id
-    Integer testCaseId
-    String onRecieveTitle
-    String onPageFinished
+    String tid
+    String onReceivedTitle
+    String domTotal
     String domContentLoad
     String load
     Date gmtCreated
@@ -17,9 +17,9 @@ class TestTimeData {
     public String toString() {
         return "TestTimeData{" +
                 "id=" + id +
-                ", testCaseId=" + testCaseId +
-                ", onRecieveTitle='" + onRecieveTitle + '\'' +
-                ", onPageFinished='" + onPageFinished + '\'' +
+                ", tid='" + tid + '\'' +
+                ", onReceivedTitle='" + onReceivedTitle + '\'' +
+                ", domTotal='" + domTotal + '\'' +
                 ", domContentLoad='" + domContentLoad + '\'' +
                 ", load='" + load + '\'' +
                 ", gmtCreated=" + gmtCreated +

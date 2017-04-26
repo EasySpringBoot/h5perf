@@ -1,0 +1,606 @@
+.link-btn {
+    color: #06A3D4;
+    cursor: pointer;
+}
+.link-btn:hover {
+    color: #48B1F1;
+}
+.link-btn:active {
+    color: #06A3D4;
+}
+.col-title {
+    font-size: 13px;
+    text-align: left;
+    margin: 13px 0;
+    text-indent: 10px;
+    border-left: 4px solid #00A2D3;
+    font-weight: bold;
+}
+.col-box {
+    margin: 30px 0 10px;
+}
+.col-table2 caption {
+    font-size: 13px;
+    text-align: left;
+    margin: 13px 0;
+    text-indent: 10px;
+    border-left: 4px solid #00A2D3;
+    font-weight: bold;
+}
+.col-table2 table {
+    width: 100%;
+    border-collapse: collapse;
+}
+.col-table2 table th,
+.col-table2 table td {
+    padding: 10px 12px;
+    border: 1px solid #e8e8e8;
+    border-width: 1px 0;
+    text-align: left;
+}
+.col-table2 table thead th {
+    background-color: #f6f6f6;
+    color: #2589CC;
+}
+.col-table2 table td.name {
+    max-width: 200px;
+    overflow: hidden;
+    color: #2589CC;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+#container .h5_icon {
+    width: 64px;
+    /*background: url('/static/img/img_h5_64.png') center center no-repeat;*/
+    background: url('/static/img/h5.png') center center no-repeat;
+    height: 64px;
+}
+#container .info {
+    padding: 20px 0;
+    overflow: hidden;
+    line-height: 64px;
+}
+#container .info li {
+    list-style: none;
+    float: left;
+    margin: 0 100px 0 0;
+}
+#container .info li.status .value {
+    color: #288F00;
+}
+#container .info li.test-progress .value .g {
+    color: #2A9202;
+}
+#container .info li.test-progress .value .r {
+    color: #FA0000;
+}
+#container .info li.test-progress .value .b {
+    color: #FF801A;
+}
+#container .info li.h5_icon {
+    margin-right: 20px;
+    position: relative;
+}
+#container .har-box {
+    margin: 41px 0 0 308px;
+}
+#container .har-box .report-tab {
+    width: 365px;
+}
+#container .har-box ._reportBox #menu-bar {
+    margin-bottom: 0px;
+}
+#container .har-box .h5-loading {
+    display: none;
+    height: 232px;
+    line-height: 232px;
+    text-align: center;
+    width: 710px;
+}
+#container .har-box .h5-loading span {
+    margin-left: 14px;
+    color: #666;
+    font-size: 16px;
+}
+#container .har-box .h5-loading:before {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    position: relative;
+    top: -5px;
+    vertical-align: middle;
+    background: url('/platform/mtl/0.0.149/images/h5-loading.png') center center no-repeat;
+    content: "";
+    -webkit-animation: rotate 1.5s infinite linear;
+    -moz-animation: rotate 1.5s infinite linear;
+    -o-animation: rotate 1.5s infinite linear;
+    animation: rotate 1.5s infinite linear;
+}
+#container .har-box .report-content {
+    display: none;
+    margin: -1px 0 0;
+    padding: 20px 0px;
+}
+#container .har-box .report-content .report-device {
+    display: none;
+}
+#container .har-box .report-content .report-device .device-info {
+    position: relative;
+    padding: 17px 50px;
+    left: 0;
+}
+#container .har-box .report-content .report-device .device-info table tbody tr {
+    height: 30px;
+}
+#container .har-box .report-content ul.block-tip {
+    list-style: none;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    margin-bottom: 8px;
+}
+#container .har-box .report-content ul.block-tip li {
+    float: left;
+    margin-right: 16px;
+}
+#container .har-box .report-content ul.block-tip li span {
+    border-radius: 4px;
+    margin-right: 4px;
+    position: relative;
+    margin: 0;
+    opacity: 1;
+    height: 15px;
+    width: 0px;
+    padding-left: 24px;
+}
+#container .har-box .report-content ul.block-tip li.dns span {
+    left: 0;
+    top: 0;
+    bottom: 0;
+    background: url('/platform/mtl/0.0.149/images/timeline-sprites.png') repeat-x scroll 0 -34px #FFFFFF;
+    min-width: 0px;
+    z-index: 60;
+}
+#container .har-box .report-content ul.block-tip li.connecting span {
+    left: 0;
+    top: 0;
+    bottom: 0;
+    background: url('/platform/mtl/0.0.149/images/timeline-sprites.png') repeat-x scroll 0 -68px #FFFFFF;
+    min-width: 0px;
+    z-index: 50;
+}
+#container .har-box .report-content ul.block-tip li.sending span {
+    left: 0;
+    top: 0;
+    bottom: 0;
+    background: url('/platform/mtl/0.0.149/images/timeline-sprites.png') repeat-x scroll 0 -102px #FFFFFF;
+    min-width: 0px;
+    z-index: 40;
+}
+#container .har-box .report-content ul.block-tip li.receiving span {
+    left: 0;
+    top: 0;
+    bottom: 0;
+    background: url('/platform/mtl/0.0.149/images/timeline-sprites.png') repeat-x scroll 0 -170px #B6B6B6;
+    min-width: 0px;
+    z-index: 20;
+}
+#container .har-box .report-content ul.block-tip li.waiting span {
+    left: 0;
+    top: 0;
+    bottom: 0;
+    background: url('/platform/mtl/0.0.149/images/timeline-sprites.png') repeat-x scroll 0 -136px #FFFFFF;
+    min-width: 1px;
+    z-index: 30;
+}
+.overview-box .help-btn {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    margin: 0 0 -3px;
+    background: url('/platform/mtl/0.0.149/images/robotium_help.png') no-repeat 0 0;
+}
+[data-title].tooltip:hover {
+    position: relative;
+}
+[data-title].tooltip:hover:before {
+    content: ' ';
+    height: 0;
+    width: 1px;
+    position: absolute;
+    border: 7px solid transparent;
+}
+[data-title].tooltip:hover:before {
+    border-bottom-color: #333;
+    position: absolute;
+    top: 14px;
+    left: 0;
+    z-index: 9999;
+}
+[data-title].tooltip:hover:after {
+    position: absolute;
+    top: 26px;
+    left: -23px;
+    max-width: 300px;
+    min-width: 160px;
+    z-index: 9997;
+    padding: 8px 8px;
+    color: #fff;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    content: attr(data-title);
+    background-color: #333;
+    -webkit-box-shadow: 0px 0px 1px 3px rgba(0, 0, 0, 0.05);
+    -moz-box-shadow: 0px 0px 1px 3px rgba(0, 0, 0, 0.05);
+    box-shadow: 0px 0px 1px 3px rgba(0, 0, 0, 0.05);
+}
+.h5-overview .norm1 {
+    /*border-bottom:1px solid #eee;*/
+    margin: 0 -60px 0 0;
+}
+.h5-overview .norm2 {
+    display: none;
+    padding: 25px 0 0;
+}
+.h5-overview .n {
+    position: relative;
+    float: left;
+    width: 200px;
+    margin: 0 47px 0 0;
+    padding: 30px 0 0;
+    height: 98px;
+    /*
+          &.warn b,&.warn span {
+              color:red;
+          }
+          &.note b,&.note span {
+              color:@mainYellow;
+          }
+          &.syn b {
+              line-height: 65px;
+              font-size:57px;
+          }*/
+}
+.h5-overview .n b {
+    font-size: 36px;
+    color: #247ed4;
+}
+.h5-overview .n span {
+    font-size: 18px;
+    color: #247ed4;
+}
+.h5-overview .n p {
+    position: absolute;
+    width: 100%;
+    padding: 3px 0 8px;
+    border-bottom: 1px solid #ddd;
+    left: 0;
+    top: 0;
+    font-size: 13px;
+}
+.h5-overview .rule-list caption {
+    font-size: 13px;
+    text-align: left;
+    margin: 13px 0;
+    text-indent: 10px;
+    border-left: 4px solid #00A2D3;
+    font-weight: bold;
+}
+.h5-overview .rule-list table {
+    width: 100%;
+    border-collapse: collapse;
+}
+.h5-overview .rule-list table th,
+.h5-overview .rule-list table td {
+    padding: 10px 12px;
+    border: 1px solid #e8e8e8;
+    border-width: 1px 0;
+    text-align: left;
+}
+.h5-overview .rule-list table thead th {
+    background-color: #f6f6f6;
+    color: #2589CC;
+}
+.h5-overview .rule-list table td.name {
+    max-width: 200px;
+    overflow: hidden;
+    color: #2589CC;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.h5-overview .rule-list table thead th {
+    text-align: center;
+}
+.h5-overview .rule-list table thead th:first-child {
+    text-align: left;
+}
+.h5-overview .rule-list table thead th:nth-child(3) {
+    text-align: left;
+}
+.h5-overview .rule-list table .lv {
+    text-align: center;
+}
+.h5-overview .rule-list table .ctrl {
+    text-align: center;
+}
+.h5-overview .rule-list table td.issue {
+    max-width: 450px;
+    padding: 3px 50px;
+}
+.h5-overview .rule-list table tr[data-tag] td {
+    border-bottom: 1px solid #2589CC;
+}
+.h5-overview .rule-list .issue-detail .desc,
+.h5-overview .rule-list .issue-detail .tips,
+.h5-overview .rule-list .issue-detail .detail {
+    margin: 10px 15px 20px;
+    clear: both;
+}
+.h5-overview .rule-list .issue-detail .title {
+    float: left;
+    background-color: #2589CC;
+    color: #fff;
+    padding: 4px 6px;
+    margin: 0px 20px 0 0;
+}
+.h5-overview .rule-list .issue-detail .content {
+    margin: 0 18px;
+    white-space: pre-wrap;
+    width: 1000px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.h5-overview .rule-list .issue-detail .content span {
+    color: #EC7F06;
+}
+.h5-overview .rule-list .issue-detail .content a {
+    white-space: nowrap;
+    color: #333 !important;
+}
+.h5-overview .rule-list .issue-detail .content a:hover {
+    color: #00A2D3 !important;
+}
+.h5-overview .table-list {
+    margin: 40px 0 ;
+    clear: both;
+}
+.h5-overview .table-list .res-type,
+.h5-overview .table-list .res-domain {
+    width: 45%;
+}
+.h5-overview .table-list .res-type caption,
+.h5-overview .table-list .res-domain caption {
+    font-size: 13px;
+    text-align: left;
+    margin: 13px 0;
+    text-indent: 10px;
+    border-left: 4px solid #00A2D3;
+    font-weight: bold;
+}
+.h5-overview .table-list .res-type table,
+.h5-overview .table-list .res-domain table {
+    width: 100%;
+    border-collapse: collapse;
+}
+.h5-overview .table-list .res-type table th,
+.h5-overview .table-list .res-domain table th,
+.h5-overview .table-list .res-type table td,
+.h5-overview .table-list .res-domain table td {
+    padding: 10px 12px;
+    border: 1px solid #e8e8e8;
+    border-width: 1px 0;
+    text-align: left;
+}
+.h5-overview .table-list .res-type table thead th,
+.h5-overview .table-list .res-domain table thead th {
+    background-color: #f6f6f6;
+    color: #2589CC;
+}
+.h5-overview .table-list .res-type table td.name,
+.h5-overview .table-list .res-domain table td.name {
+    max-width: 200px;
+    overflow: hidden;
+    color: #2589CC;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.h5-overview .table-list .res-type table caption,
+.h5-overview .table-list .res-domain table caption {
+    position: relative;
+    margin: 0 0 -27px;
+}
+.h5-overview .table-list .res-type table thead th,
+.h5-overview .table-list .res-domain table thead th,
+.h5-overview .table-list .res-type table thead td,
+.h5-overview .table-list .res-domain table thead td {
+    background-color: #fff;
+    border-top: none;
+}
+.h5-overview .table-list .res-type table tbody th,
+.h5-overview .table-list .res-domain table tbody th {
+    border-bottom: none;
+    border-top: none;
+    font-weight: normal;
+}
+.h5-overview .table-list .res-type table tbody td,
+.h5-overview .table-list .res-domain table tbody td {
+    border-bottom: none;
+    border-top: none;
+}
+.h5-overview .table-list .res-type table .title,
+.h5-overview .table-list .res-domain table .title {
+    padding: 4px 0 4px 26px;
+    margin: 0 0 0 -12px;
+    background: url('/static/img/res-type.gif') no-repeat 0 3px;
+}
+.h5-overview .table-list .res-type table .title.js,
+.h5-overview .table-list .res-domain table .title.js {
+    background-position: 0 -78px;
+}
+.h5-overview .table-list .res-type table .title.css,
+.h5-overview .table-list .res-domain table .title.css {
+    background-position: 0 -148px;
+}
+.h5-overview .table-list .res-type table .title.html,
+.h5-overview .table-list .res-domain table .title.html {
+    background-position: 0 -219px;
+}
+.h5-overview .table-list .res-type table .title.other,
+.h5-overview .table-list .res-domain table .title.other {
+    background-position: 0 -289px;
+}
+.h5-overview .table-list .res-type table .title.flash,
+.h5-overview .table-list .res-domain table .title.flash {
+    background-position: 0 -355px;
+}
+.h5-overview .table-list .res-type table .title.api,
+.h5-overview .table-list .res-domain table .title.api {
+    background-position: 0 -424px;
+}
+.h5-overview .table-list .res-type {
+    float: right;
+}
+.h5-overview .table-list .res-domain {
+    float: left;
+}
+#container a[href] {
+    color: #00a2ca;
+}
+.simpleLoading {
+    padding: 150px;
+    text-align: center;
+}
+.test-result-title {
+    margin: 0 0 -41px 308px;
+    border-left: 2px solid #3EA8E9;
+    height: 40px;
+    line-height: 40px;
+    background-color: #f6f6f6;
+    padding: 0 10px;
+}
+.test-result-title .item {
+    margin: 0 10px 0 0;
+}
+.result-info .device-info {
+    padding: 15px 0 17px 6px;
+}
+.result-info .device-info th,
+.result-info .device-info td {
+    padding: 3px 15px;
+    text-align: left;
+}
+.report-perf ul {
+    list-style: none;
+}
+.report-perf .url-title {
+    float: left;
+    margin: 0;
+}
+.report-perf .url-title p {
+    float: left;
+}
+.report-perf .url-title .btn-list {
+    float: left;
+    margin: -3px 0 0 3em;
+}
+.report-perf .url-title .url {
+    display: inline-block;
+    max-width: 800px;
+    vertical-align: bottom;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.report-perf .statistics .info-item {
+    word-break: break-all;
+    margin: 1em 0 0;
+}
+.report-perf .statistics .info-item li {
+    margin: .3em 0;
+    height: 20px;
+    position: relative;
+}
+.report-perf .statistics .info-item li[url] {
+    cursor: pointer;
+}
+.report-perf .statistics .info-item li[url]:hover {
+    color: #06A3D4;
+}
+.report-perf .statistics .info-item li[data-title] {
+    position: relative;
+}
+.report-perf .statistics .info-item li[data-title]:hover:after {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    height: auto;
+    color: white;
+    background-color: black;
+    content: attr(data-title);
+    z-index: 3;
+    padding: 8px;
+    border-radius: 2px;
+}
+.report-perf .statistics .info-item .url-list.all-list {
+    display: none;
+}
+.report-perf .statistics .info-item .name {
+    float: left;
+    width: 120px;
+    text-align: right;
+}
+.report-perf .statistics .info-item .content {
+    margin: 0 0 0 130px;
+    position: relative;
+}
+.report-perf .statistics .info-item em,
+.report-perf .statistics .info-item .em {
+    font-style: none;
+    color: #FA0000;
+}
+.report-perf .statistics .info-item .null {
+    color: #2A9202;
+}
+.report-perf .statistics .info-item .more {
+    cursor: pointer;
+    display: none;
+    position: absolute;
+    right: 30px;
+    width: 55px;
+    top: 0px;
+}
+.report-perf .statistics .info-item .more:hover {
+    text-decoration: underline;
+}
+.report-perf .statistics .info-item .collapsed {
+    background: url('/platform/mtl/0.0.149/images/down-arrow.png') center right 10px no-repeat;
+}
+.report-perf .statistics .info-item .open {
+    background: url('/platform/mtl/0.0.149/images/up-arrow.png') center right 10px no-repeat;
+}
+.report-perf .HAR iframe {
+    width: 100%;
+    min-height: 300px;
+}
+.report-perf .HAR .title {
+    margin: 30px 0 10px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: blod;
+}
+#detail {
+    padding: 1px 0 0;
+}
+.report-req {
+    height: 100%;
+}
+.report-req .HAR {
+    height: 100%;
+}
+.report-req .HAR iframe {
+    height: 900px;
+}
+.screenshot-list {
+    margin: 60px 0 0 308px;
+}

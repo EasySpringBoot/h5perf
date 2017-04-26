@@ -27,9 +27,7 @@ class TestCaseServiceImpl implements TestCaseService {
         PageHelper.startPage(pageNo, pageSize)
         List<TestCase> testCaseList = testCaseMapper.findAll()
         //用PageInfo对结果进行包装
-        PageInfo<TestCase> testCasePageInfo = new PageInfo<>(testCaseList)
-        testCasePageInfo
-
+        new PageInfo<TestCase>(testCaseList)
     }
 
     @Override

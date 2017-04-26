@@ -2,8 +2,10 @@ package com.easy.springboot.h5perf.controller
 
 import com.easy.springboot.h5perf.mapper.RequestResourceMapper
 import com.easy.springboot.h5perf.model.RequestResource
+import com.easy.springboot.h5perf.service.RequestResourceService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Controller
+import org.springframework.ui.Model
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestParam
@@ -18,6 +20,8 @@ import org.springframework.web.bind.annotation.ResponseBody
 class RequestResourceController {
     @Autowired
     RequestResourceMapper requestResourceMapper
+
+
 
     @PostMapping("/postRequestResource")
     @ResponseBody
@@ -51,5 +55,7 @@ class RequestResourceController {
     def findRequestResource(@RequestParam(value = "tid") String tid) {
         requestResourceMapper.findByTid(tid)
     }
+
+
 
 }

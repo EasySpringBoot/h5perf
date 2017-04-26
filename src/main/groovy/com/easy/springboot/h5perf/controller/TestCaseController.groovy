@@ -54,6 +54,7 @@ class TestCaseController {
                      @RequestParam(value = "pageSize", required = false) Integer pageSize) {
         def pageInfo = testCaseService.findAll(pageNo, pageSize)
         model.addAttribute("testCaseList", pageInfo.list)
+
         model.addAttribute("pageNo", pageInfo.pageNum)
         model.addAttribute("totalPage", pageInfo.pages)
         model.addAttribute("prePage", pageInfo.prePage)
