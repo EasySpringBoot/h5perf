@@ -52,7 +52,7 @@
 #container .h5_icon {
     width: 64px;
     /*background: url('/static/img/img_h5_64.png') center center no-repeat;*/
-    background: url('/static/img/h5.png') center center no-repeat;
+    background: url('/img/h5.png') center center no-repeat;
     height: 64px;
 }
 #container .info {

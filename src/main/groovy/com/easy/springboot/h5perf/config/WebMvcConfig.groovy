@@ -12,21 +12,22 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
  */
 
 @Configuration
-@EnableWebMvc
+//@EnableWebMvc //这个注解会覆盖掉SpringBoot的默认的静态资源映射配置
 class WebMvcConfig extends WebMvcConfigurerAdapter {
     @Override
     void addResourceHandlers(ResourceHandlerRegistry registry) {
-        registry.addResourceHandler("/static/**")
-                .addResourceLocations("classpath:/static/")
+//        registry.addResourceHandler("/static/**")
+//                .addResourceLocations("classpath:/static/")
 
         //Swagger ui Mapping
         registry.addResourceHandler("swagger-ui.html")
                 .addResourceLocations("classpath:/META-INF/resources/")
 
-        registry.addResourceHandler("/webjars/**")
-                .addResourceLocations("classpath:/META-INF/resources/webjars/")
-    }
+//        registry.addResourceHandler("/webjars/**")
+//                .addResourceLocations("classpath:/META-INF/resources/webjars/")
 
+
+    }
 
 }
 

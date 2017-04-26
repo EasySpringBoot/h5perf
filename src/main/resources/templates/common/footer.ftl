@@ -1,5 +1,5 @@
 <script src="${request.contextPath}/webjarslocator/jquery/jquery.min.js"></script>
-<script src="${request.contextPath}/static/js/index.js"></script>
+<script src="${request.contextPath}/js/index.js"></script>
 
 <script src="${request.contextPath}/webjarslocator/tether/tether.min.js"></script>
 <script src="${request.contextPath}/webjarslocator/bootstrap/bootstrap.min.js"></script>
