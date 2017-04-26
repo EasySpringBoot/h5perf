@@ -1,10 +1,7 @@
 package com.easy.springboot.h5perf.mapper
 
 import com.easy.springboot.h5perf.model.RequestResource
-import org.apache.ibatis.annotations.Insert
-import org.apache.ibatis.annotations.Mapper
-import org.apache.ibatis.annotations.Options
-import org.apache.ibatis.annotations.Param
+import org.apache.ibatis.annotations.*
 
 /**
  * Created by jack on 2017/4/25.
@@ -29,6 +26,8 @@ interface RequestResourceMapper {
     @Options(useGeneratedKeys = true, keyProperty = "r.id")
     int insert(@Param("r") RequestResource requestResource)
 
-    //INSERT INTO `h5perf`.`request_resource` (`tid`, `test_url`, `index`, `start_timestamp`, `timestamp`, `time_cost`, `request_url`, `method`, `headers`) VALUES ('1', '1', '1', '1', '1', '1', '1', '1', '1');
+    @Select("select * from request_resource where tid = #{tid}")
+    List<RequestResource> findByTid(@Param(value = "tid") String tid)
+
 
 }

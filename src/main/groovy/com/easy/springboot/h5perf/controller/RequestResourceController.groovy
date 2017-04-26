@@ -4,12 +4,15 @@ import com.easy.springboot.h5perf.mapper.RequestResourceMapper
 import com.easy.springboot.h5perf.model.RequestResource
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Controller
+import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestParam
 import org.springframework.web.bind.annotation.ResponseBody
 
 /**
  * Created by jack on 2017/4/25.
+ *
+ * 提供给client端写入性能数据接口api
  */
 @Controller
 class RequestResourceController {
@@ -41,6 +44,12 @@ class RequestResourceController {
         requestResource.headers = headers
 
         requestResourceMapper.insert(requestResource)
+    }
+
+    @GetMapping("/findRequestResource")
+    @ResponseBody
+    def findRequestResource(@RequestParam(value = "tid") String tid) {
+        requestResourceMapper.findByTid(tid)
     }
 
 }

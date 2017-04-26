@@ -17,6 +17,7 @@
         <th>containerType</th>
         <th>netType</th>
         <th>gmtCreated</th>
+        <th>执行</th>
         </thead>
         <tbody>
         <#list testCaseList as tc >
@@ -26,6 +27,9 @@
             <td>${tc.containerType}</td>
             <td>${tc.netType}</td>
             <td>${tc.gmtCreated?string('yyyy/MM/dd HH:mm:ss')}</td>
+            <td>
+                <button class="btn" onclick=runTestCase('${tc.testUrl}')>运行</button>
+            </td>
         </tr>
         </#list>
         </tbody>

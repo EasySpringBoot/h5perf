@@ -21,7 +21,7 @@ interface TestCaseMapper {
     @Options(useGeneratedKeys = true, keyProperty = "t.id")
     int insert(@Param("t") TestCase testCase)
 
-    @Select("select * from test_case")
+    @Select("select * from test_case order by id desc")
     List<TestCase> findAll()
 
     @Select("select * from test_case where net_type=#{netType}")

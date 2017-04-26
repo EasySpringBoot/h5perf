@@ -4,5 +4,7 @@
 <script src="${request.contextPath}/static/js/index.js"></script>
 
 <footer>
-    <div class="blockquote-footer"></div>
+    <div class="footer">
+        <div class="center">H5性能测试平台 Copyleft 2017-3000 </div>
+    </div>
 </footer>
