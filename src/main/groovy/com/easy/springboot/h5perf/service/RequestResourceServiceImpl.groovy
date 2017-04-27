@@ -23,4 +23,35 @@ class RequestResourceServiceImpl implements RequestResourceService {
         List<RequestResource> all = requestResourceMapper.listTestResult()
         new PageInfo<RequestResource>(all)
     }
+
+    @Override
+    int insert(RequestResource requestResource) {
+        String url = requestResource.requestUrl
+
+        URL urlObj = new URL(url)
+        try {
+            URLConnection uc = urlObj.openConnection()
+            println(url)
+            def contentEncoding = uc.getContentEncoding()
+            def contentType = uc.getContentType()
+            def contentLength = uc.getContentLength()
+
+            println("contentLength:" + contentEncoding)
+            println("contentType:" + contentType)
+            println("contentLength:" + contentLength)
+
+            requestResource.contentLength = contentLength == null ? 0 : contentLength + ""
+            requestResource.contentEncoding = contentEncoding
+            requestResource.contentType = contentType
+
+        } catch (ex) {
+            println("资源异常： " + url)
+            ex.printStackTrace()
+        }
+
+        requestResourceMapper.insert(requestResource)
+
+    }
+
+
 }

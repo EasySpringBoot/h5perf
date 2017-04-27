@@ -1,5 +1,8 @@
 package com.easy.springboot.h5perf.service
 
+import com.easy.springboot.h5perf.mapper.TestTaskMapper
+import com.easy.springboot.h5perf.model.TestTask
+import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
 
 /**
@@ -7,9 +10,19 @@ import org.springframework.stereotype.Service
  */
 @Service
 class RunTestCaseServiceImpl implements RunTestCaseService {
+
+    @Autowired
+    TestTaskMapper testTaskMapper
+
     @Override
     def run(String testUrl) {
         Long tid = System.currentTimeMillis()
+
+        def testTask = new TestTask()
+        testTask.tid = tid
+        testTask.status = 0
+        testTaskMapper.insert(testTask)
+
         run(testUrl, tid)
     }
 

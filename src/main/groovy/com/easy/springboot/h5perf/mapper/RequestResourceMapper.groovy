@@ -8,21 +8,8 @@ import org.apache.ibatis.annotations.*
  */
 @Mapper
 interface RequestResourceMapper {
-
-//    @Insert([
-//            "insert into request_resource",
-//            "set tid = #{r.tid},",
-//            "test_url = #{r.testUrl},",
-//            "index = #{r.index},",
-//            "start_timestamp = #{r.startTimestamp},",
-//            "timestamp = #{r.timestamp},",
-//            "time_cost = #{r.timeCost},",
-//            "request_url = #{r.requestUrl},",
-//            "method = #{r.method},",
-//            "headers = #{r.headers}"
-//    ])
-    @Insert(["insert into request_resource(`tid`, `test_url`, `index`, `start_timestamp`, `timestamp`, `time_cost`, `request_url`, `method`, `headers`)",
-            "values ( #{r.tid}, #{r.testUrl}, #{r.index}, #{r.startTimestamp}, #{r.timestamp}, #{r.timeCost}, #{r.requestUrl}, #{r.method}, #{r.headers})"])
+    @Insert(["insert into request_resource(`tid`, `test_url`, `index`, `start_timestamp`, `timestamp`, `time_cost`, `request_url`, `method`, `headers`,`content_encoding`,`content_type`,`content_length`)",
+            "values ( #{r.tid}, #{r.testUrl}, #{r.index}, #{r.startTimestamp}, #{r.timestamp}, #{r.timeCost}, #{r.requestUrl}, #{r.method}, #{r.headers} , #{r.contentEncoding} ,#{r.contentType}, #{r.contentLength})"])
     @Options(useGeneratedKeys = true, keyProperty = "r.id")
     int insert(@Param("r") RequestResource requestResource)
 

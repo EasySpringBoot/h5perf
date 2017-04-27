@@ -12,23 +12,32 @@ class RequestResource {
     Long startTimestamp;// 测试开始时间戳
     Long timestamp;// 请求的时间戳
     Integer timeCost; // 当前请求时间戳 - 测试开始时间戳
-    String requestUrl;
+    String requestUrl;// 请求URL
+
+    String contentEncoding
+    String contentType
+    String contentLength
+
     String method;//GET,POST
 //    Map<String, String> headers;
     String headers; // json string
 
     @Override
     public String toString() {
-        return "H5RequestResource{" +
-                "tid=" + tid +
+        return "RequestResource{" +
+                "id=" + id +
+                ", tid='" + tid + '\'' +
                 ", testUrl='" + testUrl + '\'' +
                 ", index=" + index +
                 ", startTimestamp=" + startTimestamp +
                 ", timestamp=" + timestamp +
                 ", timeCost=" + timeCost +
                 ", requestUrl='" + requestUrl + '\'' +
+                ", contentEncoding='" + contentEncoding + '\'' +
+                ", contentType='" + contentType + '\'' +
+                ", contentLength='" + contentLength + '\'' +
                 ", method='" + method + '\'' +
-                ", headers=" + headers +
+                ", headers='" + headers + '\'' +
                 '}';
     }
 }
