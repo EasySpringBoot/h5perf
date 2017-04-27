@@ -1,83 +1,109 @@
-CREATE DATABASE IF NOT EXISTS `h5perf`
-  DEFAULT CHARACTER SET utf8;
+CREATE DATABASE  IF NOT EXISTS `h5perf` /*!40100 DEFAULT CHARACTER SET utf8 */;
 USE `h5perf`;
+-- MySQL dump 10.13  Distrib 5.7.9, for osx10.9 (x86_64)
+--
+-- Host: localhost    Database: h5perf
+-- ------------------------------------------------------
+-- Server version	5.7.11
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `request_resource`
+--
+
+DROP TABLE IF EXISTS `request_resource`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `request_resource` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `tid` varchar(100) DEFAULT NULL,
+  `test_url` longtext,
+  `index` int(11) DEFAULT NULL,
+  `start_timestamp` bigint(11) DEFAULT NULL,
+  `timestamp` bigint(11) DEFAULT NULL,
+  `time_cost` int(11) DEFAULT NULL,
+  `request_url` longtext,
+  `method` varchar(10) DEFAULT NULL,
+  `headers` longtext,
+  `content_encoding` varchar(100) DEFAULT NULL,
+  `content_type` varchar(100) DEFAULT NULL,
+  `content_length` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=1054 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `test_case`
+--
 
 DROP TABLE IF EXISTS `test_case`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `test_case` (
-  `id`             INT(11) NOT NULL AUTO_INCREMENT,
-  `container_type` VARCHAR(45)      DEFAULT NULL
-  COMMENT '‘ORIGIN_WEBVIEW’,’UC_WEBVIEW’',
-  `test_url`       VARCHAR(45)      DEFAULT NULL,
-  `net_type`       VARCHAR(45)      DEFAULT NULL
-  COMMENT '‘WIFI’,‘3G’,‘4G’',
-  `gmt_created`    DATETIME         DEFAULT NULL,
-  `gmt_modified`   DATETIME         DEFAULT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `container_type` varchar(45) DEFAULT NULL COMMENT '‘ORIGIN_WEBVIEW’,’UC_WEBVIEW’',
+  `test_url` varchar(200) DEFAULT NULL,
+  `net_type` varchar(45) DEFAULT NULL COMMENT '‘WIFI’,‘3G’,‘4G’',
+  `gmt_created` datetime DEFAULT NULL,
+  `gmt_modified` datetime DEFAULT NULL,
+  `tid` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id`)
-)
-  ENGINE = InnoDB
-  DEFAULT CHARSET = utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=41 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
+--
+-- Table structure for table `test_task`
+--
 
-DROP TABLE IF EXISTS `test_resource`;
-
-CREATE TABLE `test_resource` (
-  `id`            INT(11) NOT NULL AUTO_INCREMENT,
-  `test_case_id`  INT(11)          DEFAULT NULL,
-  `start_time`    BIGINT(11)       DEFAULT NULL,
-  `resource_url`  VARCHAR(500)     DEFAULT NULL,
-  `resource_type` VARCHAR(45)      DEFAULT NULL
-  COMMENT 'IMG,JS,CSS,OTHER',
-  `resource_time` BIGINT(11)       DEFAULT NULL
-  COMMENT 'onLoadResource资源时间戳',
-  `resource_size` BIGINT(11)       DEFAULT NULL
-  COMMENT '资源大小',
-  `gmt_created`   DATETIME         DEFAULT NULL,
+DROP TABLE IF EXISTS `test_task`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `test_task` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `tid` varchar(45) DEFAULT NULL,
+  `status` varchar(45) DEFAULT NULL COMMENT '0: RUNNING  1: DONE',
+  `gmt_created` datetime DEFAULT NULL,
+  `gmt_modified` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-)
-  ENGINE = InnoDB
-  DEFAULT CHARSET = utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
+--
+-- Table structure for table `test_time_data`
+--
 
 DROP TABLE IF EXISTS `test_time_data`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `test_time_data` (
-  `id`               INT(11) NOT NULL AUTO_INCREMENT,
-  `test_case_id`     INT(11)          DEFAULT NULL,
-  `on_recieve_title` VARCHAR(45)      DEFAULT NULL
-  COMMENT '近似白屏时间',
-  `on_page_finished` VARCHAR(45)      DEFAULT NULL
-  COMMENT '页面加载完成时间',
-  `dom_content_load` VARCHAR(45)      DEFAULT NULL
-  COMMENT 'dom内容加载完成时间',
-  `load`             VARCHAR(45)      DEFAULT NULL
-  COMMENT '资源加载完成时间',
-  `gmt_created`      DATETIME         DEFAULT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `tid` varchar(45) DEFAULT NULL,
+  `on_received_title` varchar(45) DEFAULT NULL COMMENT '近似白屏时间',
+  `dom_total` varchar(45) DEFAULT NULL COMMENT '页面加载完成时间',
+  `dom_content_load` varchar(45) DEFAULT NULL COMMENT 'dom内容加载完成时间',
+  `load` varchar(45) DEFAULT NULL COMMENT '资源加载完成时间',
+  `gmt_created` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-)
-  ENGINE = InnoDB
-  DEFAULT CHARSET = utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=53 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
-CREATE TABLE `h5perf`.`user` (
-  `id`       INT          NOT NULL AUTO_INCREMENT,
-  `workno`   VARCHAR(45)  NULL,
-  `name`     VARCHAR(45)  NULL,
-  `email`    VARCHAR(45)  NULL,
-  `password` VARCHAR(100) NULL,
-  `role`     VARCHAR(45)  NULL,
-  PRIMARY KEY (`id`)
-);
-
-CREATE TABLE `h5perf`.`role` (
-  `id`         INT         NOT NULL AUTO_INCREMENT,
-  `role_key`   VARCHAR(45) NULL,
-  `role_value` VARCHAR(45) NULL,
-  PRIMARY KEY (`id`, `role_key`)
-);
-
-
-INSERT INTO `h5perf`.`user` (`id`, `workno`, `name`, `email`, `password`, `role`)
-VALUES ('1', '1', 'root', 'root@123.com', '123456', 'ROLE_USER,ROLE_ADMIN');
-INSERT INTO `h5perf`.`user` (`id`, `workno`, `name`, `email`, `password`, `role`)
-VALUES ('2', '1', 'jack', 'jack@123.com', '123456', 'ROLE_USER');
+-- Dump completed on 2017-04-27 17:58:44
