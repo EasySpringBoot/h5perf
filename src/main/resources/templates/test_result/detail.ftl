@@ -361,31 +361,43 @@
                     <a href="#showRequest-${r.index}"
                        data-toggle="collapse"
                     <#--data-target="#showRequest-${r.index}"-->
-                       limit="150">${r.requestUrl}</a>
+                       limit="130">${r.requestUrl}</a>
                     <div id="showRequest-${r.index}" class="collapse">
 
                         <table class="table-hover table-bordered">
                             <tbody>
                             <tr>
-                                <td style="width: 10%;text-align: left;">请求URL：</td>
+                                <td class="requestLabel">请求URL：</td>
                                 <td style="text-align: left;"><a href="${r.requestUrl}">${r.requestUrl}</a></td>
                             </tr>
 
                             <tr>
-                                <td style="width: 10%;text-align: left;">请求头：</td>
+                                <td class="requestLabel">请求头：</td>
                                 <td style="text-align: left;">${r.headers}</td>
                             </tr>
                             <tr>
-                                <td style="width: 10%;text-align: left;">请求方法：</td>
+                                <td class="requestLabel">请求方法：</td>
                                 <td style="text-align: left;">${r.method}</td>
                             </tr>
                             <tr>
-                                <td style="width: 10%;text-align: left;">时间戳：</td>
+                                <td class="requestLabel">时间戳：</td>
                                 <td style="text-align: left;">${r.timestamp?string('##############')}</td>
                             </tr>
                             <tr>
-                                <td style="width: 10%;text-align: left;">耗费时间(ms)：</td>
+                                <td class="requestLabel">耗费时间(ms)：</td>
                                 <td style="text-align: left;">${r.timeCost}</td>
+                            </tr>
+                            <tr>
+                                <td class="requestLabel">contentEncoding：</td>
+                                <td style="text-align: left;">${r.contentEncoding!}</td>
+                            </tr>
+                            <tr>
+                                <td class="requestLabel">contentType：</td>
+                                <td style="text-align: left;">${r.contentType!}</td>
+                            </tr>
+                            <tr>
+                                <td class="requestLabel">请求资源大小 contentLength(Byte)：</td>
+                                <td style="text-align: left;">${r.contentLength!}</td>
                             </tr>
                             </tbody>
 

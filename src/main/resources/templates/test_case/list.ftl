@@ -28,7 +28,9 @@
             <td>${tc.netType}</td>
             <td>${tc.gmtCreated?string('yyyy/MM/dd HH:mm:ss')}</td>
             <td>
-                <button class="btn" onclick=runTestCase('${tc.testUrl}')>运行</button>
+                <button id="btn-run-${tc.id}" class="btn btn-primary" onclick=runTestCase('${tc.testUrl}',${tc.id})
+                        data-loading-text="执行中">运行
+                </button>
             </td>
         </tr>
         </#list>
@@ -47,11 +49,6 @@
         </#list>
             <li><a href="/listTestCase?pageNo=${nextPage}&pageSize=10">&raquo;</a></li>
 
-        <#--<li class="active"><a href="#">1</a></li>-->
-        <#--<li><a href="#">2</a></li>-->
-        <#--<li><a href="#">3</a></li>-->
-        <#--<li><a href="#">4</a></li>-->
-        <#--<li><a href="#">5</a></li>-->
         </ul>
     </div>
 

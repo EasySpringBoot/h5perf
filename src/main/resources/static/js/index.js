@@ -11,7 +11,13 @@ $(function () {
 
 })
 
-function runTestCase(url) {
+function runTestCase(url, id) {
+    console.log(url)
+    var runBtn = $("btn-run-" + id)
+    console.log(runBtn)
+
+    var tid = "";
+
     $.ajax({
         url: 'runTestCase',
         type: 'POST',
@@ -21,10 +27,44 @@ function runTestCase(url) {
         async: false,
         success: function (response) {
             //{exitValue: 0, tid: 1493200446692}
-            console.log(response)
+            console.log("response:" + response)
             if (response.exitValue == 0) {
-                alert('运行成功')
-                window.open("listTestResult", "_blank")
+                tid = response.tid
+
+                $(runBtn).button('loading')
+
+                var status = 0
+                var count = 0;
+
+                while (status != 1 && count < 10) {
+                    count++;
+
+                    sleep(3000);
+
+                    console.log("count:" + count);
+                    console.log("status:" + status);
+
+                    $.ajax({
+                        url: '/getTestTaskStatus?tid=' + tid,
+                        data: {},
+                        type: 'GET',
+                        async: false,
+                        success: function (st) {
+                            if (st == 1) {
+                                status = 1
+                            }
+                        }
+                    });
+
+
+                }
+
+                if (status == 1) {
+                    $(runBtn).button('reset')
+                    alert('运行成功')
+                    window.open("/detailTestResult?tid=" + tid, "_blank")
+                }
+
             } else {
                 alert('运行错误')
             }
@@ -103,5 +143,16 @@ jQuery.fn.limit = function () {
     self.each(function () {
         getLimit(this);
     })
+}
+
+
+function sleep(numberMillis) {
+    var now = new Date();
+    var exitTime = now.getTime() + numberMillis;
+    while (true) {
+        now = new Date();
+        if (now.getTime() > exitTime)
+            return;
+    }
 }
 
