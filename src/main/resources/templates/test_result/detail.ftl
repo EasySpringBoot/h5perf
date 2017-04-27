@@ -346,29 +346,57 @@
     </div>
 
     <div class="container">
-        <table id="requestTable" class="table table-hover table-stripped">
+        <table id="requestTable" class="table table-hover table-responsive table-striped table-success">
             <thead>
-            <th>No</th>
-            <th>requestUrl</th>
-            <th>timestamp</th>
-            <th>timeCost</th>
-            <th>method</th>
-            <th>headers</th>
+            <th style="width: 5%">No</th>
+            <th style="width: 95%; text-align: left">requestUrl</th>
             </thead>
             <tbody>
             <#list requestResource as r >
+
             <tr>
-                <td>${r.index}</td>
-                <td><a href="${r.requestUrl}">${r.requestUrl}</a></td>
-                <td>${r.timestamp?string('##############')}</td>
-                <td>${r.timeCost}</td>
-                <td>${r.method}</td>
-                <td limit="100">${r.headers}</td>
+                <td style="width: 5%">${r.index}</td>
+            <#--<td><a href="${r.requestUrl}">${r.requestUrl}</a></td>-->
+                <td style="width: 95%; text-align: left;">
+                    <a href="#showRequest-${r.index}"
+                       data-toggle="collapse"
+                    <#--data-target="#showRequest-${r.index}"-->
+                       limit="150">${r.requestUrl}</a>
+                    <div id="showRequest-${r.index}" class="collapse">
+
+                        <table class="table-hover table-bordered">
+                            <tbody>
+                            <tr>
+                                <td style="width: 10%;text-align: left;">请求URL：</td>
+                                <td style="text-align: left;"><a href="${r.requestUrl}">${r.requestUrl}</a></td>
+                            </tr>
+
+                            <tr>
+                                <td style="width: 10%;text-align: left;">请求头：</td>
+                                <td style="text-align: left;">${r.headers}</td>
+                            </tr>
+                            <tr>
+                                <td style="width: 10%;text-align: left;">请求方法：</td>
+                                <td style="text-align: left;">${r.method}</td>
+                            </tr>
+                            <tr>
+                                <td style="width: 10%;text-align: left;">时间戳：</td>
+                                <td style="text-align: left;">${r.timestamp?string('##############')}</td>
+                            </tr>
+                            <tr>
+                                <td style="width: 10%;text-align: left;">耗费时间(ms)：</td>
+                                <td style="text-align: left;">${r.timeCost}</td>
+                            </tr>
+                            </tbody>
+
+                        </table>
+                    </div>
+                </td>
             </tr>
+
             </#list>
             </tbody>
         </table>
-
 
     </div>
 </div>
